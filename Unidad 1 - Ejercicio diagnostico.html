@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio diagnostico</title>
+</head>
+<body>
+    <h1>Unidad 1 - Ejercicio diagnostico</h1>
+    
+    <div>
+        <label>Nombre</label>
+        <input type="text" name="nombre" id="txt-nombre">
+    </div>
+    <br>
+    <div>
+        <label>Apellido</label>
+        <input type="text" name="apellido" id="txt-apellido">
+    </div>
+    <br>
+    <div>
+        <label>Grupo</label>
+        <input type="text" name="grupo" id="txt-grupo">
+    </div>
+    <br>
+    <button id="btn_guardar" onclick="enviarDatos()">Enviar</button>
+    
+    <br><br>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Grupo</th>
+        </tr>
+        <tbody id="tabla">
+            
+        </tbody>
+    </table>
+
+    <script>
+        function enviarDatos(){
+            let nombre = document.getElementById("txt-nombre").value
+            let apellido = document.getElementById("txt-apellido").value
+            let grupo = document.getElementById("txt-grupo").value
+
+            let datos = "<tr><td>"+nombre+"</td><td>"+apellido+"</td><td>"+grupo+"</td><td></tr>"
+
+            document.getElementById("tabla").innerHTML += datos
+
+            document.getElementById("txt-nombre").value = ""
+            document.getElementById("txt-apellido").value = ""
+            document.getElementById("txt-grupo").value = ""
+        }
+    </script>
+</body>
+</html>
